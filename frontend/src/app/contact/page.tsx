@@ -24,10 +24,19 @@ export default function ContactPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ 
+          access_key: 'd70314bc-fef9-400f-a6b4-17067d30f91e',
+          name, 
+          email, 
+          message,
+          subject: 'New Contact Submission - CallNexa'
+        })
       });
 
       const data = await response.json();
@@ -37,17 +46,11 @@ export default function ContactPage() {
         setEmail('');
         setMessage('');
       } else {
-        setError(data.error || 'Failed to submit contact request.');
+        setError(data.message || 'Failed to submit contact request.');
       }
     } catch (err) {
-      console.warn('Backend server offline. Simulating contact request success...', err);
-      // Fallback preview simulation
-      setTimeout(() => {
-        setSuccess(true);
-        setName('');
-        setEmail('');
-        setMessage('');
-      }, 1200);
+      console.error('Error submitting form', err);
+      setError('An network error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
