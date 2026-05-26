@@ -102,7 +102,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               <li className="flex items-center gap-2 text-sm text-gray-500">
                 <Mail size={14} className="text-brand-500" />
-                <span>support@callnexa.com</span>
+                <span>prashobhmanojnair@gmail.com</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-gray-500">
                 <Globe size={14} className="text-brand-500" />

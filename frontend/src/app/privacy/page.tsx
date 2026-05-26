@@ -89,7 +89,7 @@ export default function PrivacyPage() {
 
           <h4 className="font-heading font-bold text-sm text-gray-800">4. Opt-Out & Number Censorship</h4>
           <p>
-            Although CallNexa does not index private personal profiles, individuals may request to have their phone numbers toggled to a "Private/Do Not Track" status inside our lookup index, disabling community flags and metrics searches for that number. To submit an opt-out, contact support@callnexa.com.
+            Although CallNexa does not index private personal profiles, individuals may request to have their phone numbers toggled to a "Private/Do Not Track" status inside our lookup index, disabling community flags and metrics searches for that number. To submit an opt-out, contact prashobhmanojnair@gmail.com.
           </p>
         </div>
 
