@@ -145,7 +145,7 @@ export default function ContactPage() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="text-xs font-bold text-gray-700 uppercase tracking-wide">
-                Corporate Email Address
+                Email Address
               </label>
               <input
                 id="email"
