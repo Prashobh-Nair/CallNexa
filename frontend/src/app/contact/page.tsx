@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, MessageSquare, ShieldCheck, AlertCircle, Send, Globe, Loader2 } from 'lucide-react';
+import { Mail, MessageSquare, ShieldCheck, AlertCircle, Send, Globe, Loader2, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ContactPage() {
@@ -84,10 +84,10 @@ export default function ContactPage() {
 
           <div className="flex items-center gap-3 text-sm text-gray-600 bg-white border border-gray-100 rounded-2xl p-4 shadow-sm">
             <div className="bg-brand-50 text-brand-500 p-2.5 rounded-xl border border-brand-100">
-              <Globe size={16} />
+              <Phone size={16} />
             </div>
             <div>
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Corporate Node</p>
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Contact Number</p>
               <h5 className="font-bold text-gray-800 mt-0.5">9426062574</h5>
             </div>
           </div>
