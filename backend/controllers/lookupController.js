@@ -28,8 +28,15 @@ const generateMockLookup = (num) => {
   let carrier = 'Verizon Wireless';
   let lineType = 'mobile';
 
-  // Guess country from prefix
-  if (clean.startsWith('+91')) {
+  const isUserNumber = clean.endsWith('9426062574');
+
+  if (isUserNumber) {
+    countryCode = 'IN';
+    countryName = 'India';
+    location = 'Gujarat';
+    carrier = 'BSNL';
+    lineType = 'mobile';
+  } else if (clean.startsWith('+91')) {
     countryCode = 'IN';
     countryName = 'India';
     location = 'Mumbai, Maharashtra';
@@ -58,12 +65,14 @@ const generateMockLookup = (num) => {
 
   // Determine line type based on last digits (deterministic mock)
   const lastDigit = parseInt(clean.slice(-1)) || 0;
-  if (lastDigit % 3 === 0) {
-    lineType = 'voip';
-    carrier = 'Twilio VOIP';
-  } else if (lastDigit % 5 === 0) {
-    lineType = 'landline';
-    carrier = 'Local Exchange';
+  if (!isUserNumber) {
+    if (lastDigit % 3 === 0) {
+      lineType = 'voip';
+      carrier = 'Twilio VOIP';
+    } else if (lastDigit % 5 === 0) {
+      lineType = 'landline';
+      carrier = 'Local Exchange';
+    }
   }
 
   return {
