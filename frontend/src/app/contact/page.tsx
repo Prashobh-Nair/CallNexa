@@ -78,7 +78,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Mailbox Support</p>
-              <h5 className="font-bold text-gray-800 mt-0.5">support@callnexa.com</h5>
+              <h5 className="font-bold text-gray-800 mt-0.5">prashobhmanojnair@gmail.com</h5>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Corporate Node</p>
-              <h5 className="font-bold text-gray-800 mt-0.5">San Francisco, CA</h5>
+              <h5 className="font-bold text-gray-800 mt-0.5">9426062574</h5>
             </div>
           </div>
         </div>
