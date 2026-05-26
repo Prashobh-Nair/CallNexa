@@ -176,25 +176,9 @@ exports.lookupNumber = async (req, res) => {
       });
     }
 
-    // 2. Cache miss: Fetch from NumLookupAPI or mock
-    let apiData = null;
-    const apiKey = process.env.NUMLOOKUP_API_KEY;
-
-    if (apiKey && apiKey !== 'YOUR_NUMLOOKUP_API_KEY_HERE') {
-      try {
-        console.log(`Calling NumLookupAPI for number: ${cleaned}`);
-        const response = await axios.get(`https://api.numlookupapi.com/v1/validate/${cleaned}?apikey=${apiKey}`, {
-          timeout: 5000
-        });
-        apiData = response.data;
-      } catch (apiErr) {
-        console.error(`NumLookupAPI query failed: ${apiErr.message}. Falling back to mock data.`);
-        apiData = generateMockLookup(cleaned);
-      }
-    } else {
-      console.log(`No active API key. Generating realistic mock details for: ${cleaned}`);
-      apiData = generateMockLookup(cleaned);
-    }
+    // 2. Cache miss: Generate simulated data directly
+    console.log(`Generating realistic simulated details for: ${cleaned}`);
+    const apiData = generateMockLookup(cleaned);
 
     // Standardize structure
     const lookupDetails = {

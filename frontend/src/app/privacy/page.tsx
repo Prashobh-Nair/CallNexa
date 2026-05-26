@@ -24,7 +24,7 @@ export default function PrivacyPage() {
     {
       icon: <ShieldCheck className="text-brand-500" size={20} />,
       title: 'Third-Party API Integrations',
-      desc: 'NumLookupAPI connections are piped securely through our backend server. No API keys or vendor endpoints are exposed to the browser client, preventing metadata eavesdropping or unauthorized scraping.'
+      desc: 'All lookup queries and caller analytics are processed securely. No API keys, personal credentials, or private routing endpoints are exposed to the browser client, ensuring PII-free scanning.'
     }
   ];
 
