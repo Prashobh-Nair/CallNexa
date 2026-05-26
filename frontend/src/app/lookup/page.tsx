@@ -38,15 +38,18 @@ function LookupContent() {
     try {
       // Connect to Express backend via proxy rewrite
       const response = await fetch(`/api/lookup/${cleanedNumber}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
 
-      if (response.ok && data.success) {
+      if (data.success) {
         setResult(data.data);
       } else {
         setError(data.error || 'Failed to analyze phone number. Please check format.');
       }
     } catch (err) {
-      console.warn('Backend server unreachable. Simulating lookup locally for preview mode...', err);
+      console.warn('Backend server unreachable or static deployment. Simulating lookup locally...', err);
       // Failover Mock Simulation so UI works perfectly even without running local Node server
       setTimeout(() => {
         const mockResult = generateLocalSimulation(numberToQuery);
