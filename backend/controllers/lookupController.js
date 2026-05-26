@@ -28,7 +28,7 @@ const generateMockLookup = (num) => {
   let carrier = 'Verizon Wireless';
   let lineType = 'mobile';
 
-  const isUserNumber = clean.endsWith('9426062574');
+  const isUserNumber = clean.endsWith('9426062574') || clean.endsWith('9427404800');
 
   if (isUserNumber) {
     countryCode = 'IN';
